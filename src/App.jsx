@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Hero from './components/Hero.jsx';
@@ -8,9 +8,31 @@ import Experience from './components/Experience.jsx';
 import Skills from './components/Skills.jsx';
 import Certificates from './components/Certificates.jsx';
 import Contact from './components/Contact.jsx';
+import CertificatesPage from './pages/CertificatesPage.jsx';
+
+function getRoute(hash) {
+  return hash === '#/sertifikat' ? 'certificates' : 'home';
+}
 
 export default function App() {
   const rootRef = useRef(null);
+  const [route, setRoute] = useState(() => getRoute(window.location.hash));
+
+  useEffect(() => {
+    const onHashChange = () => setRoute(getRoute(window.location.hash));
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (route !== 'home') return;
+    const hash = window.location.hash;
+    if (!hash || hash === '#/sertifikat') return;
+    const id = hash.slice(1);
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'auto', block: 'start' });
+    });
+  }, [route]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -42,10 +64,18 @@ export default function App() {
     }, root);
 
     return () => ctx.revert();
-  }, []);
+  }, [route]);
+
+  if (route === 'certificates') {
+    return (
+      <div ref={rootRef} key="certificates">
+        <CertificatesPage />
+      </div>
+    );
+  }
 
   return (
-    <div ref={rootRef} className="w-full bg-brand-paper font-body text-[17px] leading-[1.65] text-brand-ink">
+    <div ref={rootRef} key="home" className="w-full bg-brand-paper font-body text-[17px] leading-[1.65] text-brand-ink">
       <Hero />
       <About />
       <Highlights />

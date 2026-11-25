@@ -16,7 +16,7 @@ export const navItems = [
   { label: 'Sorotan', href: '#sorotan' },
   { label: 'Pengalaman', href: '#pengalaman' },
   { label: 'Keahlian', href: '#keahlian' },
-  { label: 'Sertifikat', href: '#sertifikat' },
+  { label: 'Sertifikat', href: '#/sertifikat' },
   { label: 'Kontak', href: '#kontak' },
 ];
 
@@ -186,3 +186,16 @@ const experienceList = [
 export const experience = experienceList;
 export const skills = skillList;
 export const certificates = certList;
+
+const certificateModules = import.meta.glob('../assets/images/sertivicate/*.jpeg', {
+  eager: true,
+  import: 'default',
+});
+const certificateImages = Object.keys(certificateModules)
+  .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }))
+  .map((file) => certificateModules[file]);
+
+export const certificateGallery = certificateImages.map((image, index) => ({
+  ...(certList[index] ?? { date: '', name: `Sertifikat ${index + 1}` }),
+  image,
+}));
