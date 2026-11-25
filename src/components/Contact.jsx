@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="kontak" className="bg-brand-ink pb-10 pt-24 text-brand-paper">
       <div className={`${wrap} ${stack64}`}>
         <div className="flex flex-wrap items-start gap-x-16 gap-y-10">
-          <div className="flex min-w-0 flex-1 basis-[420px] flex-col gap-5">
+          <div data-reveal className="flex min-w-0 flex-1 basis-[420px] flex-col gap-5">
             <p className={eyebrowLight}>{contactCopy.eyebrow}</p>
             <h2 className="font-head text-[clamp(36px,6vw,68px)] font-bold leading-none tracking-[-0.03em] text-balance">
               {contactCopy.title}
@@ -14,7 +14,7 @@ export default function Contact() {
             <p className="max-w-[480px] text-brand-muted-dark">{contactCopy.text}</p>
           </div>
 
-          <div className="flex min-w-0 flex-1 basis-[420px] flex-col">
+          <div data-reveal-card className="flex min-w-0 flex-1 basis-[420px] flex-col">
             {contacts.map((c, i) => {
               const isLast = i === contacts.length - 1;
               const rowClass = `flex flex-wrap gap-x-6 gap-y-1 border-t border-[#3a414c] py-[18px]${

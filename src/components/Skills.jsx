@@ -10,6 +10,7 @@ export default function Skills() {
         <div className="flex flex-wrap gap-x-8 gap-y-10">
           {skills.map((group) => (
             <div
+              data-reveal-card
               className="flex min-w-0 flex-1 basis-[240px] flex-col gap-4 border-t-2 border-brand-ink pt-5"
               key={group.title}
             >

@@ -10,11 +10,12 @@ export default function About() {
         <SectionHead eyebrow={about.eyebrow} title={about.title} />
         <div className="grid items-start gap-x-12 gap-y-10 lg:grid-cols-[minmax(260px,0.85fr)_minmax(0,1.15fr)]">
           <img
+            data-reveal-card
             className="block aspect-[4/4] w-full max-w-[300px] rounded-[4px] object-cover object-[center_100%]"
             src={fotoSirkuit}
             alt="Arbi Maulidi Anggito berdiri dengan tangan bersilang di lintasan Sirkuit Mandalika"
           />
-          <div className="flex min-w-0 max-w-180 flex-col gap-5 text-pretty">
+          <div data-reveal className="flex min-w-0 max-w-180 flex-col gap-5 text-pretty">
             {about.paragraphs.map((p) => (
               <p key={p.slice(0, 24)}>{p}</p>
             ))}

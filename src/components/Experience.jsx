@@ -11,6 +11,7 @@ export default function Experience() {
         <div className="flex flex-col">
           {experience.map((job) => (
             <article
+              data-reveal-card
               className="grid gap-x-12 gap-y-3 border-t border-brand-line py-7 lg:grid-cols-[220px_minmax(0,1fr)]"
               key={`${job.period}-${job.role}`}
             >
@@ -35,6 +36,7 @@ export default function Experience() {
         <div className="grid gap-6 md:grid-cols-2">
           {education.map((e) => (
             <article
+              data-reveal-card
               className="box-border flex h-full min-w-0 flex-col gap-2 rounded-[6px] border border-brand-line bg-brand-paper p-7"
               key={e.label}
             >

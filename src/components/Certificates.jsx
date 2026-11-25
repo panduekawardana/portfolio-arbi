@@ -11,7 +11,7 @@ export default function Certificates() {
           title={certificatesCopy.title}
           className={splitHead}
         />
-        <div className="flex min-w-0 flex-1 basis-[440px] flex-col">
+        <div data-reveal className="flex min-w-0 flex-1 basis-[440px] flex-col">
           {certificates.map((c) => (
             <div
               className="flex flex-wrap gap-x-8 gap-y-1 border-t border-brand-line py-[18px]"

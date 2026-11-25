@@ -10,6 +10,7 @@ export default function Highlights() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {highlights.items.map((item) => (
             <article
+              data-reveal-card
               className="box-border flex h-full min-w-0 flex-col gap-5 rounded-[6px] border border-brand-line bg-white p-8"
               key={item.title}
             >

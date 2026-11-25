@@ -45,7 +45,7 @@ export default function Hero() {
             <h1 className="font-head text-[clamp(48px,8.4vw,108px)] font-bold leading-[0.96] tracking-[-0.035em] text-balance">
               {profile.name}
             </h1>
-            <p className="max-w-[600px] text-xl leading-[1.55] text-brand-muted-dark">
+            <p className="max-w-[600px] text-md leading-[1.55] text-brand-muted-dark">
               {profile.tagline}
             </p>
             <div className="flex flex-wrap gap-3">
@@ -64,21 +64,23 @@ export default function Hero() {
             </div>
           </div>
 
-          <ProfileCard
-            avatarUrl={sirkuitPhoto}
-            miniAvatarUrl={heroPhoto}
-            name={profile.name}
-            handle="arbi-anggito"
-            status="Online"
-            statusColor="#0e6b5c"
-            contactText="Kontak"
-            onContactClick={() => {
-              window.location.hash = '#kontak';
-            }}
-            theme="dark"
-            backdropColor="#14181f"
-            radius={16}
-          />
+          <div data-reveal-card>
+            <ProfileCard
+              avatarUrl={sirkuitPhoto}
+              miniAvatarUrl={heroPhoto}
+              name={profile.name}
+              handle="arbi-anggito"
+              status="Online"
+              statusColor="#0e6b5c"
+              contactText="Kontak"
+              onContactClick={() => {
+                window.location.hash = '#kontak';
+              }}
+              theme="dark"
+              backdropColor="#14181f"
+              radius={16}
+            />
+          </div>
         </div>
 
         <div className="flex flex-wrap border-t border-[#3a414c]">
