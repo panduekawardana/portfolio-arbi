@@ -1,0 +1,10 @@
+export const wrap = 'mx-auto box-border w-full max-w-[1152px] px-[max(24px,env(safe-area-inset-left,0px))]';
+export const eyebrow = 'text-[13px] font-semibold uppercase tracking-[0.12em]';
+export const eyebrowRed = `${eyebrow} text-brand-accent`;
+export const eyebrowLight = `${eyebrow} text-brand-accent-dark`;
+export const sectionHead = 'flex min-w-0 flex-col gap-3';
+export const hSection = 'font-head text-[clamp(30px,4vw,42px)] font-semibold leading-[1.1] tracking-[-0.02em] text-balance';
+export const stack40 = 'flex flex-col gap-10';
+export const stack64 = 'flex flex-col gap-16';
+export const split = 'flex flex-wrap gap-x-16 gap-y-6';
+export const splitHead = 'min-w-0 flex-none basis-[260px]';
